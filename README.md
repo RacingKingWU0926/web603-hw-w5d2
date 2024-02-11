@@ -1,6 +1,6 @@
 # web603-hw-w5d2
 
-## Getting Started
+## Before Getting Started
 
 This repo is a continuous work of the application "node-mongo". Its backend part has been completed in the repo `web603-hw-w5d1`. This repo will focus only the frontend part, which will use the React framework, and is created for better clarity.
 
@@ -37,3 +37,21 @@ $ ip addr | grep eth0
 ```
 
 The IP address might be different from what's being used in `web603-hw-w5d1/node-mongo/.env`. Edit `DATABASE` in the `.env` file if necessary, and use that IP address in MongoDB Compass. Once connected, you should see the `react-crud` database created in the previous homework.
+
+## Getting Started
+
+### Step 1: Create the React App
+
+With `web603-hw-w5d2` being the current directory, create the React app by
+
+```bash
+$ npx create-react-app react-app
+```
+
+### Step 2: Install Dependencies
+
+With `react-app/` being the current directory, install the following modules by
+
+```bash
+$ npm install bootstrap react-cookie react-router-dom reactstrap
+```
