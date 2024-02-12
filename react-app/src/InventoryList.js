@@ -75,6 +75,7 @@ class InventoryList extends Component {
       <div>
         <AppNavbar />
         <Container fluid>
+          {/* "Add Inventory" Button */}
           <div className="float-right">
             <Button
               color="success"
@@ -84,6 +85,8 @@ class InventoryList extends Component {
             >Add Inventory
             </Button>
           </div>
+
+          {/* Inventory List Table */}
           <h3>Inventory List</h3>
           <Table className="mt-4">
             <thead>
@@ -99,6 +102,7 @@ class InventoryList extends Component {
               {inventoryList}
             </tbody>
           </Table>
+
         </Container>
       </div>
     )
