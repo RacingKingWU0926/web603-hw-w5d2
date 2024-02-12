@@ -37,10 +37,13 @@ function InventoryEdit() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+  
+    const method = item._id ? 'PUT' : 'POST';
+    const endpoint = item._id ? `/api/inventories/${item._id}` : `/api/inventories/new`;
 
     try {
-      await fetch(`/api/inventories/${item._id || params.id}`, {
-        method: item._id ? 'PUT' : 'POST',
+      await fetch(endpoint, {
+        method: method,
         headers: {
           "Accept": "application/json",
           "Content-Type": "application/json"
@@ -51,7 +54,7 @@ function InventoryEdit() {
     } catch (error) {
       console.error('Submit failed', error);
     }
-  }
+  };
 
   const title = <h2 className="mt-3">{params.id !== 'new' ? 'Edit Inventory' : 'Add Inventory'}</h2>;
 
@@ -70,6 +73,17 @@ function InventoryEdit() {
               value={item.prodname || ""}
               onChange={handleChange}
               autoComplete="prodname" 
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label for="qty" className="h5 mt-3">Quantity</Label>
+            <Input
+              type="text"
+              name="qty"
+              id="qty"
+              value={item.qty || ""}
+              onChange={handleChange}
+              autoComplete="qty" 
             />
           </FormGroup>
           <FormGroup>
